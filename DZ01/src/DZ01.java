@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class DZ01 {
     public static void main (String args[]) {
-
+//DZ1
 //        принимаем параметр
         Random random = new Random();
         int x = random.nextInt(1000);
