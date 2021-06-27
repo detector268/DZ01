@@ -1,0 +1,37 @@
+<html>
+
+<body>
+
+    <div>
+        <form action="/logout" method="post">
+            <input type="submit" value="Sign Out"/>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        </form>
+    </div>
+    <div>
+        <h1>Новый заказ</h1>
+    </div>
+    <div>
+        <form method="post">
+            <input type="date" name="date" placeholder="Введите дату мероприятия" />
+            <input type="time" name="time" placeholder="Время выхода артиста"/>
+            <input type="text" name="adr" placeholder="Адрес места проведения"/>
+            <input type="text" name="progName" placeholder="Название программы"/>
+            <button type="submit">Заказать</button>
+            <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        </form>
+    </div>
+    <div>
+        <h1>Мои заказы</h1>
+    </div>
+
+    {{#orders}}
+    <div>
+        <b>{{date}}</b>
+        <span>{{time}}</span>
+        <span>{{adr}}</span>
+        <b>{{progName}}</b>
+    </div>
+    {{/orders}}
+</body>
+</html>
