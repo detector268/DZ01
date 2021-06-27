@@ -1,0 +1,25 @@
+
+<html>
+<body>
+    <div>
+        <form action="/logout" method="post">
+        <input type="submit" value="Sign Out"/>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        </form>
+    </div>
+    <h1>Актуальные предложения</h1>
+        {{#programs}}
+            <div>
+                <h2>{{name}}</h2>
+                <splan>{{description}}</splan>
+                Цена:
+                <b>{{price}} Рублей </b>
+            </div>
+        {{/programs}}
+    <p></p>
+    <form action="order">
+        <button type="submit">Перейти к заказам</button>
+         <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+  </form>
+</body>
+</html>
